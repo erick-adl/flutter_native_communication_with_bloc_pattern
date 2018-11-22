@@ -2,7 +2,6 @@ import 'dart:async';
 import 'package:basic_channel_communication/main_controller.dart';
 import 'package:bloc_pattern/bloc_pattern.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 
 Future main() async {
   runApp(new MyApp());
@@ -35,11 +34,12 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePage extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
+    
     final MainController bloc = BlocProvider.of<MainController>(context);
 
     return new Scaffold(
       appBar: new AppBar(
-        title: new Text("Teste Channel com Bloc"),
+        title: new Text("Test Channel with Bloc"),
       ),
       body: new Center(
         child: StreamBuilder(
@@ -47,7 +47,7 @@ class _MyHomePage extends State<MyHomePage> {
             return Text("Android: ${snapshot.data}");
           },
           stream: bloc.outData,
-          initialData: "Teste",
+          initialData: "no data yet...",
         ),
       ),
     );

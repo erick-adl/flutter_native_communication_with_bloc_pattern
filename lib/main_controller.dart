@@ -19,6 +19,10 @@ class MainController implements BlocBase {
     await platform.invokeMethod('showNativeView');
   }
 
+    Future<Null> _getData() async {
+    await platform.invokeMethod('getData');
+  }
+
   String dataToSend = "";
   void sendData() {
     inData.add(dataToSend);

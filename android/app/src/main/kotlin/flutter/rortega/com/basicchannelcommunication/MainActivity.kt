@@ -34,9 +34,11 @@ class MainActivity() : FlutterActivity() {
             if (call.method == "showNativeView") {
 //                val intent = Intent(this, NativeViewActivity::class.java)
 //                startActivity(intent)
+            }
+            if (call.method == "getData") {
                 channel.invokeMethod("message", "Ola, eu sou o android nativo...")
-
                 result.success(true)
+                
             } else {
                 result.notImplemented()
             }
